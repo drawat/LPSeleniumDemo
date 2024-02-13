@@ -9,7 +9,9 @@ import LPMAOSeleniumPOC.Utilities.Browser.WebPage;
 public class MAOLaunchAndLogin extends WebPage {
 	
 
-	public static final String MAO_URL = "https://lilyv-auth.omni.manh.com/org_login";
+	public static final String MAO_Launch_URL = "https://lilyv.omni.manh.com/";
+	
+	public static final String MAO_Login_URL = "https://lilyv-auth.omni.manh.com/org_login";
 	
 	public MAOLaunchAndLogin(WebDriver driver) {
 		super(driver);
@@ -18,8 +20,8 @@ public class MAOLaunchAndLogin extends WebPage {
 
 	@Override
 	public void openURL() {
-		driver.get(MAO_URL);
-		waitForPageToLoad();
+		driver.get(MAO_Launch_URL);
+		waitForPageToLoad(MAO_Login_URL);
 		PageFactory.initElements(driver, this);
 		
 	}
@@ -39,7 +41,7 @@ public class MAOLaunchAndLogin extends WebPage {
     	usr.sendKeys(username);
     	pwd.sendKeys(password);
     	loginButton.click();
-    	waitForPageToLoad();
+    	waitForPageToLoad(MAOHomeLandingPage.MAO_HOME_URL);
     	return PageFactory.initElements(driver, MAOHomeLandingPage.class);
     	
     }

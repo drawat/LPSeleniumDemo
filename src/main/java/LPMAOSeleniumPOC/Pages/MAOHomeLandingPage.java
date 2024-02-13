@@ -21,7 +21,7 @@ public class MAOHomeLandingPage extends WebPage{
 	public void openURL() {
 		// TODO Auto-generated method stub
 		driver.get(MAO_HOME_URL);
-		waitForPageToLoad();
+		waitForPageToLoad(MAO_HOME_URL);
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(xpath = "/html/body/my-app/md-sidenav-layout/div[2]/md-toolbar/div/md-toolbar-row/button[1]")

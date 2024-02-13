@@ -18,7 +18,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 public abstract class WebPage extends PageSupport {
 	
@@ -54,19 +54,24 @@ public abstract class WebPage extends PageSupport {
 		//	File file = new File("//home//af832b//chromedriver");
 			//ChromeDriverService chromeservice = new ChromeDriverService();
 			//WebDriverManager.chromedriver().setup();
-			WebDriverManager.chromedriver().clearDriverCache().setup();
+		//	WebDriverManager.chromedriver().clearDriverCache().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized");
-			 options.addArguments("disable-infobars"); // disabling infobars
-			    options.addArguments("--disable-extensions"); // disabling extensions
-			    options.addArguments("--disable-gpu"); // applicable to Windows os only
-			    options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-			    options.addArguments("--no-sandbox"); // Bypass OS security model
-			    options.addArguments("--disable-in-process-stack-traces");
-			    options.addArguments("--disable-logging");
-			    options.addArguments("--log-level=3");
-			    options.addArguments("--remote-allow-origins=*");
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\DRAWAT\\eclipse-workspace\\Drivers\\chromedriver.exe");
+	//		service = Service(ChromeDriverManager().install())
+
+			/*
+			 * options.addArguments("disable-infobars"); // disabling infobars
+			 * options.addArguments("--disable-extensions"); // disabling extensions
+			 * options.addArguments("--disable-gpu"); // applicable to Windows os only
+			 * options.addArguments("--disable-dev-shm-usage"); // overcome limited resource
+			 * problems options.addArguments("--no-sandbox"); // Bypass OS security model
+			 * options.addArguments("--disable-in-process-stack-traces");
+			 * options.addArguments("--disable-logging");
+			 * options.addArguments("--log-level=3");
+			 * options.addArguments("--remote-allow-origins=*");
+			 */
+			  
+			    System.setProperty("webdriver.chrome.driver", "C:\\Users\\DRAWAT\\eclipse-workspace\\Drivers\\chromedriver.exe");
 //			DesiredCapabilities ieCapabilities = DesiredCapabilities.chrome();
 //			ieCapabilities.setCapability("platform", Platform.WINDOWS);
 //			ieCapabilities.setCapability("binary", "//home//af832b//chromedriver");

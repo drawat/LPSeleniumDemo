@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeSuite;
 
 //import ru.stqa.selenium.factory.WebDriverPool;
 import LPMAOSeleniumPOC.Utilities.Browser.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class TestUtil {
@@ -26,7 +26,7 @@ private WebDriver driver ;
 	}
 	@BeforeSuite(alwaysRun = true)
 	public void setupChrome() {
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 		BasicConfigurator.configure();
 	}
 	

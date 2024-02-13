@@ -8,10 +8,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 public abstract class PageSupport {
 	
 	protected WebDriver driver;
+	
 	
 	public PageSupport(WebDriver driver){
 		this.driver = driver;
@@ -77,29 +81,31 @@ public abstract class PageSupport {
 	}
 	
 		
-	protected void waitForPageToLoad(){
-		
-		int maxTimeOutInSeconds = 20;
-		int loops = maxTimeOutInSeconds*4;
-		for (int i=0; i<loops; i++){
-			try {
-				Object result = ((JavascriptExecutor) driver).executeScript("return document.readyState;");
-				if (result.toString().equalsIgnoreCase("complete"))  break;
-					try {
-						Thread.sleep(250L);
-					} catch (InterruptedException e) {
-						// try again;
-					}
-				} catch (Exception e) {
-					// Possible page reload. Fine
-					try {
-						Thread.sleep(250L);
-					} catch (InterruptedException e1) {
-						// try again;
-					}
-				}
-	
-			}
+	protected void waitForPageToLoad(String Url){
+		Duration timeout = Duration.ofSeconds(30);
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		wait.until(ExpectedConditions.urlToBe(Url));
+//		int maxTimeOutInSeconds = 20;
+//		int loops = maxTimeOutInSeconds*4;
+//		for (int i=0; i<loops; i++){
+//			try {
+//				Object result = ((JavascriptExecutor) driver).executeScript("return document.readyState;");
+//				if (result.toString().equalsIgnoreCase("complete"))  break;
+//					try {
+//						Thread.sleep(250L);
+//					} catch (InterruptedException e) {
+//						// try again;
+//					}
+//				} catch (Exception e) {
+//					// Possible page reload. Fine
+//					try {
+//						Thread.sleep(250L);
+//					} catch (InterruptedException e1) {
+//						// try again;
+//					}
+//				}
+//	
+//			}
 		}
 	
 	protected WebElement waitForElement(By by){
