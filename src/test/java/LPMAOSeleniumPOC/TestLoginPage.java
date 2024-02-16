@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import LPMAOSeleniumPOC.Pages.MAOCSRPage;
 import LPMAOSeleniumPOC.Pages.MAOHomeLandingPage;
 import LPMAOSeleniumPOC.Pages.MAOLaunchAndLogin;
 
@@ -20,6 +21,14 @@ public class TestLoginPage extends TestUtil{
 	    MAOLaunchAndLogin maoLaunchPage = new MAOLaunchAndLogin(getNewDriver("CHROME"));
 	    maoLaunchPage.openURL();
 	    MAOHomeLandingPage homePage = maoLaunchPage.Login("VPTAdminUser", "Password123!");
-	    Assert.assertTrue(homePage.menuButtonExists());
+	   //homePage.setOrginization("LP-US");
+	 //  homePage.setProfile("LP-US");
+	    
+	    MAOCSRPage csrPage = homePage.navigateToCSRUI();
+	    csrPage.selectOrganization();
+	    csrPage.clickItemSearch();
+	    csrPage.searchSKU("889069952273");
+	    csrPage.clickAddCheckoutBttn();
+	    Assert.assertTrue(csrPage.isCustomerDetailPopupDisplayed());
 	  }
 	}

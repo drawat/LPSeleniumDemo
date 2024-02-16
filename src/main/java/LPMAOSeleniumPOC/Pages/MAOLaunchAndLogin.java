@@ -42,6 +42,7 @@ public class MAOLaunchAndLogin extends WebPage {
     	pwd.sendKeys(password);
     	loginButton.click();
     	waitForPageToLoad(MAOHomeLandingPage.MAO_HOME_URL);
+    	implicitWait(implicitWaitTime);
     	return PageFactory.initElements(driver, MAOHomeLandingPage.class);
     	
     }

@@ -2,6 +2,7 @@ package LPMAOSeleniumPOC.Utilities.Browser;
 
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -79,8 +80,28 @@ public abstract class PageSupport {
 
 
 	}
+	protected void waitForNewTab() {
+		Duration timeout = Duration.ofSeconds(30);
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+	}
 	
-		
+ protected void switchToNewWindow() {
+	 Set<String> windowHandles = driver.getWindowHandles();
+     // Switch to the new window
+     for (String windowHandle : windowHandles) {
+         if (!windowHandle.equals(driver.getWindowHandle())) {
+             driver.switchTo().window(windowHandle);
+             break;
+         }
+     }
+	 
+ }
+	
+protected void switchToMainTab() {
+	driver.switchTo().defaultContent();
+
+}
 	protected void waitForPageToLoad(String Url){
 		Duration timeout = Duration.ofSeconds(30);
 		WebDriverWait wait = new WebDriverWait(driver, timeout);

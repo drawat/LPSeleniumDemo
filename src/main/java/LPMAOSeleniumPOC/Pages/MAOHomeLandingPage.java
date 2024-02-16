@@ -1,8 +1,12 @@
 package LPMAOSeleniumPOC.Pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import LPMAOSeleniumPOC.Utilities.Browser.WebPage;
@@ -27,11 +31,17 @@ public class MAOHomeLandingPage extends WebPage{
 	@FindBy(xpath = "/html/body/my-app/md-sidenav-layout/div[2]/md-toolbar/div/md-toolbar-row/button[1]")
 	public WebElement menuButton;
 
-	@FindBy(className = "md-select-arrow")
+	@FindBy(xpath = "//md-select[@aria-label='Organization']/div[@class='md-select-trigger']")
 	public WebElement OrganizationDropDown;
 	
 	@FindBy(className = "md-select-arrow")
 	public WebElement profileDropdown;
+	
+	@FindBy(className="md-select-trigger")
+	public WebElement[] elements;
+	
+	@FindBy(xpath = "//div[@class='first-left tile']//div[@class='item']")
+	public WebElement cusServericeURL;
 	
 	/*
 	 * public void clickMenu() { menuButton.click();
@@ -40,5 +50,25 @@ public class MAOHomeLandingPage extends WebPage{
 	 */
 	public boolean menuButtonExists() {
 	return	menuButton.isDisplayed();
+	}
+	
+	public void setOrginization(String strOrg){
+		elements[0].click();
+		implicitWait(implicitWaitTime);
+		waitForElement(By.id("md-input-0")).sendKeys(strOrg);;
+		
+	}
+	public void setProfile(String strProfile) {
+		elements[1].click();
+		implicitWait(implicitWaitTime);
+		waitForElement(By.id("md-input-1")).sendKeys(strProfile);;
+	}
+	
+	public MAOCSRPage navigateToCSRUI() {
+		cusServericeURL.click();
+		implicitWait(implicitWaitTime);
+		switchToNewWindow();
+		waitForPageToLoad(MAOCSRPage.MAO_CSR_URL);
+		return PageFactory.initElements(driver, MAOCSRPage.class);
 	}
 }
