@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import LPMAOSeleniumPOC.Utilities.Browser.WebPage;
 public class MAOCSRPage extends WebPage{
 	
-	public static final String MAO_CSR_URL = "https://lilyv.omni.manh.com/customerengagementfacade/index.html";
+	public static final String MAO_CSR_URL = "https://lilyv.omni.manh.com/customerengagementfacade/app/csrdashboard";
 	
 	public MAOCSRPage(WebDriver driver) {
 		super(driver);
@@ -79,9 +79,13 @@ public class MAOCSRPage extends WebPage{
 		
 	}
 	
-	public void clickDoneBtnOnCustomerSearch() {
+	public MAOOrderDetailPage clickDoneBtnOnCustomerSearch() {
 		implicitWait(implicitWaitTime);
 		btnDoneCustomerSearch.click();
+		implicitWait(implicitWaitTime);
+		orderID=waitForElement(By.xpath("//h5[@data-component-id='OrderId']")).getText();
+		System.out.println("Order Id:    " +  orderID);
+		return PageFactory.initElements(driver, MAOOrderDetailPage.class);
 	}
 	/*
 	 * public void selectOrganization() { implicitWait(implicitWaitTime);

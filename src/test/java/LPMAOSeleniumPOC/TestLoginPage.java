@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import LPMAOSeleniumPOC.Pages.MAOCSRPage;
 import LPMAOSeleniumPOC.Pages.MAOHomeLandingPage;
 import LPMAOSeleniumPOC.Pages.MAOLaunchAndLogin;
-
+import LPMAOSeleniumPOC.Pages.MAOOrderDetailPage;
 import TestUtil.TestUtil;
 
 
@@ -29,8 +29,18 @@ public class TestLoginPage extends TestUtil{
 	    csrPage.clickItemSearch();
 	    csrPage.searchSKU("889069952273");
 	    csrPage.clickAddCheckoutBttn();
-	    csrPage.inputAndSelectCustomer("test01234@maovpt.com");
-	    csrPage.clickDoneBtnOnCustomerSearch();
+	    csrPage.inputAndSelectCustomer("Testvpt@gmail.com");
+	   MAOOrderDetailPage ordDetailsPage=  csrPage.clickDoneBtnOnCustomerSearch();
+	//   ordDetailsPage.clickUseThisBtn();
+	   ordDetailsPage.clickProceedToPayment();
+	   ordDetailsPage.enterCreditCardSecurityCode("123");
+	   ordDetailsPage.addCCbuttonClick();
+	   ordDetailsPage.clickProceedToSummaryBtn();
+	   ordDetailsPage.clickPlaceOrder();
+	   if (ordDetailsPage.isupdateCustomerDetailsDailogDisplayed()){
+		   ordDetailsPage.clickSaveCustomerDetailsBtn();
+	   }
+	   System.out.println("Order Sucessfully placed:   " + ordDetailsPage.orderID);
 	  //  Assert.assertTrue(csrPage.isCustomerDetailPopupDisplayed());
 	    Assert.assertEquals(true, true);
 	    

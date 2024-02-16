@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-16T17:54:13 IST" name="Tests" finished-at="2024-02-16T17:56:18 IST" duration-ms="125262">
+  <suite started-at="2024-02-16T20:22:14 IST" name="Tests" finished-at="2024-02-16T20:25:32 IST" duration-ms="198124">
     <groups>
     </groups>
-    <test started-at="2024-02-16T17:54:13 IST" name="Test1" finished-at="2024-02-16T17:56:18 IST" duration-ms="125262">
+    <test started-at="2024-02-16T20:22:14 IST" name="Test1" finished-at="2024-02-16T20:25:32 IST" duration-ms="198124">
       <class name="LPMAOSeleniumPOC.TestLoginPage">
-        <test-method is-config="true" signature="setupChrome()[pri:0, instance:LPMAOSeleniumPOC.TestLoginPage@3ec300f1]" started-at="2024-02-16T17:54:13 IST" name="setupChrome" finished-at="2024-02-16T17:54:13 IST" duration-ms="56" status="PASS">
+        <test-method is-config="true" signature="setupChrome()[pri:0, instance:LPMAOSeleniumPOC.TestLoginPage@3ec300f1]" started-at="2024-02-16T20:22:14 IST" name="setupChrome" finished-at="2024-02-16T20:22:14 IST" duration-ms="54" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupChrome -->
-        <test-method signature="testHomePageHasAHeader()[pri:0, instance:LPMAOSeleniumPOC.TestLoginPage@3ec300f1]" started-at="2024-02-16T17:54:13 IST" name="testHomePageHasAHeader" finished-at="2024-02-16T17:56:18 IST" duration-ms="125241" status="PASS">
+        <test-method signature="testHomePageHasAHeader()[pri:0, instance:LPMAOSeleniumPOC.TestLoginPage@3ec300f1]" started-at="2024-02-16T20:22:14 IST" name="testHomePageHasAHeader" finished-at="2024-02-16T20:25:32 IST" duration-ms="198097" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomePageHasAHeader -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:LPMAOSeleniumPOC.TestLoginPage@3ec300f1]" started-at="2024-02-16T17:56:18 IST" name="teardown" finished-at="2024-02-16T17:56:18 IST" duration-ms="302" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:LPMAOSeleniumPOC.TestLoginPage@3ec300f1]" started-at="2024-02-16T20:25:32 IST" name="teardown" finished-at="2024-02-16T20:25:33 IST" duration-ms="777" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
