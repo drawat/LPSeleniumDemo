@@ -22,7 +22,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public abstract class WebPage extends PageSupport {
 	
-	public static int implicitWaitTime = 5;
+	public static int implicitWaitTime = 10;
 	
 	public WebPage(WebDriver driver){
 		super(driver);

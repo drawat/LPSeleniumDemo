@@ -3,6 +3,7 @@ package LPMAOSeleniumPOC.Pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -53,19 +54,24 @@ public class MAOHomeLandingPage extends WebPage{
 	}
 	
 	public void setOrginization(String strOrg){
-		elements[0].click();
+	//	elements[0].click();
+		driver.findElements(By.className("md-select-value")).getFirst().click();
 		implicitWait(implicitWaitTime);
-		waitForElement(By.id("md-input-0")).sendKeys(strOrg);;
-		
-	}
-	public void setProfile(String strProfile) {
-		elements[1].click();
+		waitForElement(By.id("md-input-0")).sendKeys(strOrg);
+		driver.findElements(By.className("md-ripple-background")).getLast().click();
 		implicitWait(implicitWaitTime);
-		waitForElement(By.id("md-input-1")).sendKeys(strProfile);;
+				
 	}
+	/*
+	 * public void setProfile(String strProfile) { List<WebElement> elements =
+	 * driver.findElements(By.className("md-select-value")); WebElement
+	 * specificElement = elements.getLast(); specificElement.click();
+	 * implicitWait(implicitWaitTime);
+	 * waitForElement(By.id("md-input-1")).sendKeys(strProfile);; }
+	 */
 	
 	public MAOCSRPage navigateToCSRUI() {
-		cusServericeURL.click();
+				cusServericeURL.click();
 		implicitWait(implicitWaitTime);
 		switchToNewWindow();
 		waitForPageToLoad(MAOCSRPage.MAO_CSR_URL);

@@ -1,16 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 43.847 s <<< FAILURE! - in TestSuite
-testHomePageHasAHeader(LPMAOSeleniumPOC.TestLoginPage)  Time elapsed: 42.666 s  <<< FAILURE!
-org.openqa.selenium.NoSuchFrameException: 
-no such frame
-  (Session info: chrome=121.0.6167.161)
-Build info: version: '4.17.0', revision: 'e52b1be057*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6c2a8fdc36642ff66e72a185ff4bb57d, switchToFrame {id={element-6066-11e4-a52e-4f735466cecf=4CC564D092FE4F4D31CD9E2AEA1799A1_element_122}}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.161, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\DRAWAT\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58771}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58771/devtoo..., se:cdpVersion: 121.0.6167.161, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6c2a8fdc36642ff66e72a185ff4bb57d
-	at LPMAOSeleniumPOC.TestLoginPage.testHomePageHasAHeader(TestLoginPage.java:28)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 125.964 s - in TestSuite

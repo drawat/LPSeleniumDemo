@@ -28,11 +28,17 @@ public class MAOCSRPage extends WebPage{
 	@FindBy(xpath="//div[@data-component-id='CustomerInfoDialog']")
 	public WebElement custDetailsPopup;
 	
+	@FindBy(xpath="//input[@id='search-input']")
+	public WebElement custSearchTextBox;
+	
 	@FindBy(xpath="//div[@id='customer-dashboard-title']//h5[@data-component-id='SelectedOrg']")
 	public WebElement orgDropDown;
 	
 	@FindBy(xpath="//div[@class='cdk-overlay-container']//div[@id='cdk-overlay-18']//button[2]")
 	public WebElement orgSelection;
+	
+	@FindBy(xpath="//button[@data-component-id='DoneBtn']")
+	public WebElement btnDoneCustomerSearch;
 
 	@Override
 	public void openURL() {
@@ -64,17 +70,28 @@ public class MAOCSRPage extends WebPage{
 		implicitWait(implicitWaitTime);
 		return custDetailsPopup.isDisplayed();
 	}
-	public void selectOrganization() {
+	
+	public void inputAndSelectCustomer(String custEmailId) {
 		implicitWait(implicitWaitTime);
-		orgDropDown.click();
-		driver.switchTo().frame(driver.findElement(By.className("cdk-overlay-container")));
-		System.out.println(orgSelection.isDisplayed());
+		custSearchTextBox.sendKeys(custEmailId);
 		implicitWait(implicitWaitTime);
-		orgSelection.click();
-		implicitWait(implicitWaitTime);
-		driver.switchTo().defaultContent();
-		
+		driver.findElements(By.xpath("//h4[@id='customer-name']")).getFirst().click();
 		
 	}
+	
+	public void clickDoneBtnOnCustomerSearch() {
+		implicitWait(implicitWaitTime);
+		btnDoneCustomerSearch.click();
+	}
+	/*
+	 * public void selectOrganization() { implicitWait(implicitWaitTime);
+	 * orgDropDown.click(); driver.switchTo().frame(driver.findElement(By.className(
+	 * "cdk-overlay-container"))); System.out.println(orgSelection.isDisplayed());
+	 * implicitWait(implicitWaitTime); orgSelection.click();
+	 * implicitWait(implicitWaitTime); driver.switchTo().defaultContent();
+	 * 
+	 * 
+	 * }
+	 */
 
 }
