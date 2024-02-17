@@ -24,6 +24,8 @@ private WebDriver driver ;
 		driver  = WebPage.getNewDriver(Browser);
 		return driver;
 	}
+	
+	
 	@BeforeSuite(alwaysRun = true)
 	public void setupChrome() {
 		//WebDriverManager.chromedriver().setup();
