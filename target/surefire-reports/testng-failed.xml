@@ -5,7 +5,9 @@
     <classes>
       <class name="LPMAOSeleniumPOC.TestLoginPage">
         <methods>
+          <include name="closeExcel"/>
           <include name="testHomePageHasAHeader"/>
+          <include name="openTestDataFile"/>
           <include name="setupChrome"/>
           <include name="teardown"/>
         </methods>

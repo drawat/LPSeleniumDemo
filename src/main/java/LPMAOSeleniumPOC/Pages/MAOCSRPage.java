@@ -59,6 +59,7 @@ public class MAOCSRPage extends WebPage{
 		implicitWait(implicitWaitTime);
 		itemSearchTextBox.sendKeys(ItemID);
 		itemSearchTextBox.sendKeys(Keys.ENTER);
+		implicitWait(implicitWaitTime);
 	}
 	
 	public void clickAddCheckoutBttn() {
