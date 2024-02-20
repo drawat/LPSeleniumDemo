@@ -14,18 +14,29 @@ import org.apache.http.util.EntityUtils;
 import org.apache.http.entity.mime.content.FileBody;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
+import java.util.Properties;
 
 public class JIRAIntegration {
 
 	public static final String JIRA_BASE_URL = "https://oxfordinc.atlassian.net/rest/api/2/issue/";
-	public static final String AuthToken ="ATATT3xFfGF0j7aWVrK-3yMAti9QhGvpAMvw2iwtaNGTXvhTpVEa4UN6-qTJYk-LipDs50THFHZzCDddSyPWOaNlLG-KBu_hw6zHCAQnACrO0_ADaGm-FUy9oxfzex4myr7vl47IR092G3CSe-mwomPNKeh9zRw_dXwm2IyCc5gosfy_BF1xC-w=B0BA04D0";
-	String credentials = "drawat@deloitte.com" + ":" + AuthToken;
-    String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
+	String credentials;
+	String encodedCredentials;
+	
 	public JIRAIntegration() {
-		
+		Properties properties = new Properties();
+	      try (FileInputStream input = new FileInputStream("./src/test/resources/application.properties")) {
+	          properties.load(input);
+	      } catch (IOException e) {
+	          e.printStackTrace();
+	          return;
+	      }
+		String apiKey = properties.getProperty("token.value");
+		credentials = "drawat@deloitte.com" + ":" + apiKey;
+	    encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
 	}
 	
 	public void updateJIRAStatus(String issueID, String trnsID) {
@@ -50,7 +61,6 @@ public class JIRAIntegration {
 	
 	public void addJIRAComments (String issueID, String strComment) {
 		String url = JIRA_BASE_URL + issueID + "/comment";
-		//System.out.println(url);
 		String jsonBody = "{\"body\": \"" + strComment + "\"}";
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		 HttpPost httpPost = new HttpPost(url);
@@ -60,9 +70,7 @@ public class JIRAIntegration {
 			StringEntity entity = new StringEntity(jsonBody);
 			httpPost.setEntity(entity);
 			CloseableHttpResponse response = httpClient.execute(httpPost);
-			//System.out.println("response Stats code  "+ response.getStatusLine().getStatusCode());
-		//	String responseBody = EntityUtils.toString(response.getEntity());
-           // System.out.println("Response Body: " + responseBody);
+			
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

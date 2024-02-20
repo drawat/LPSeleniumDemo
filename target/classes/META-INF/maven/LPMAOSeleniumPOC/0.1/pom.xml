@@ -183,5 +183,5 @@
         <grid.url>http://localhost:4444/wd/hub/</grid.url>
       </properties>
     </profile>
-  </profiles>
+   </profiles>
 </project>

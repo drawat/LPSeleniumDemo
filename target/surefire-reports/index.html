@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Tests">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Tests" title="LPMAOSeleniumPOC.TestLoginPage" class="method navigator-link" hash-for-method="testHomePageHasAHeader">testHomePageHasAHeader</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Tests" title="LPMAOSeleniumPOC.JIRAIntegrationTest" class="method navigator-link" hash-for-method="testJIRAMethods">testJIRAMethods</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Tests -->
@@ -120,14 +120,14 @@
           <div class="suite-Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">LPMAOSeleniumPOC.TestLoginPage</span>
+              <span class="class-name">LPMAOSeleniumPOC.JIRAIntegrationTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testHomePageHasAHeader">
-                  </a> <!-- testHomePageHasAHeader -->
-                  <span class="method-name">testHomePageHasAHeader</span>
+                  <a name="testJIRAMethods">
+                  </a> <!-- testJIRAMethods -->
+                  <span class="method-name">testJIRAMethods</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,7 +144,7 @@
 &lt;suite name=&quot;Tests&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test1&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;LPMAOSeleniumPOC.TestLoginPage&quot;/&gt;
+      &lt;class name=&quot;LPMAOSeleniumPOC.JIRAIntegrationTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test1 --&gt;
 &lt;/suite&gt; &lt;!-- Tests --&gt;
@@ -186,14 +186,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testHomePageHasAHeader')
-data.setCell(0, 2, 'LPMAOSeleniumPOC.TestLoginPage')
-data.setCell(0, 3, 272768);
+data.setCell(0, 1, 'testJIRAMethods')
+data.setCell(0, 2, 'LPMAOSeleniumPOC.JIRAIntegrationTest')
+data.setCell(0, 3, 1374);
 window.suiteTableData['Tests']= { tableData: data, tableDiv: 'times-div-Tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Tests">
               </div> <!-- times-div-Tests -->
             </div> <!-- times-div -->
@@ -219,27 +219,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">LPMAOSeleniumPOC.TestLoginPage</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
-                <span class="method-name">setupChrome</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
-              <div class="configuration-test before">
-                <span class="method-name">openTestDataFile</span>
-                <span class="method-start">47 ms</span>
-              </div> <!-- configuration-test before -->
+              <div class="chronological-class-name">LPMAOSeleniumPOC.JIRAIntegrationTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testHomePageHasAHeader</span>
-                <span class="method-start">69 ms</span>
+                <span class="method-name">testJIRAMethods</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">closeExcel</span>
-                <span class="method-start">272845 ms</span>
-              </div> <!-- configuration-test after -->
-              <div class="configuration-suite after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">272924 ms</span>
-              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
