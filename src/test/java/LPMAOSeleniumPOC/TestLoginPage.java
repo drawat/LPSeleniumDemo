@@ -12,6 +12,7 @@ import LPMAOSeleniumPOC.Pages.MAOCSRPage;
 import LPMAOSeleniumPOC.Pages.MAOHomeLandingPage;
 import LPMAOSeleniumPOC.Pages.MAOLaunchAndLogin;
 import LPMAOSeleniumPOC.Pages.MAOOrderDetailPage;
+import LPMAOSeleniumPOC.Utilities.Browser.JIRAIntegration;
 import LPMAOSeleniumPOC.Utilities.Browser.WebPage;
 import LPMAOSeleniumPOC.Utilities.Evidence.TestEvidence;
 import TestUtil.TestUtil;
@@ -31,7 +32,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 
 
-
+//https://oxfordinc.atlassian.net/browse/DOT-13116
 public class TestLoginPage extends TestUtil{
 	public ExcelObject xlsObj;
 
@@ -100,12 +101,15 @@ public class TestLoginPage extends TestUtil{
 		  System.out.println("Order Sucessfully placed:   " + ordDetailsPage.orderID);
 		//  xlsObj.writeCellData(2, 5, ordDetailsPage.orderID);
 		  testEvidence.addTestStepDescriptionAndStatus("Step9:- Order Successfully placed:   " + ordDetailsPage.orderID, "Test Step: Passed");
-		  testEvidence.saveTestEvidence("DOT-11212 Call Center Order Creation Test Results  "+ ordDetailsPage.orderID );
-
+		  testEvidence.saveTestEvidence("DOT-11212_CC_OrderCreation_TestResults  "+ ordDetailsPage.orderID );
+		  JIRAIntegration jira = new JIRAIntegration();
+		  jira.addJIRAComments("DOT-13139", "Test Case:- Passed (Attachment: " + ordDetailsPage.orderID+ ".docx)");
+		 // jira.updateJIRAStatus("DOT-13139", "31");
+		  jira.uploadAttachmentToJIRA("DOT-13139", "DOT-11212_CC_OrderCreation_TestResults  "+ ordDetailsPage.orderID +".docx");
+		  jira.updateJIRAStatus("DOT-13139", "31");
 		  Assert.assertEquals(true, true);
 	    
-		
-	  }
+	}
 	  @AfterTest
 	  public void closeExcel() {
 			//xlsObj.saveExcel();
