@@ -89,7 +89,7 @@ public class JIRAIntegration {
 		
 		httpPost.setHeader("X-Atlassian-Token", "no-check");
 
-	        File fileToUpload = new File("C:\\Users\\DRAWAT\\eclipse-workspace\\LPSeleniumDemo\\" + fileName);
+	        File fileToUpload = new File("./" + fileName);
 	       
 	        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 	       
