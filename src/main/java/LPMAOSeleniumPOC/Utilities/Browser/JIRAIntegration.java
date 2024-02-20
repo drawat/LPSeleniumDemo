@@ -21,7 +21,7 @@ import java.util.Base64;
 public class JIRAIntegration {
 
 	public static final String JIRA_BASE_URL = "https://oxfordinc.atlassian.net/rest/api/2/issue/";
-	public static final String AuthToken ="ATATT3xFfGF0nhVL-qHPiJ6bwviEdn-h3wG4GqgKJCa0nZrp30zGI5A876YQ1Hgcr57-rraXPiJAhGlcSMc3ePlG3JM0-tS86GY1FnnNomEC9QH71NJ54cIaOf84vXV9c4W5kVY3Mh-z1FyCwGcvafI0a1I6GEvDoKerOJfsLARuE4Ua5rwbc6U=1D4F4E84";
+	public static final String AuthToken ="ATATT3xFfGF0j7aWVrK-3yMAti9QhGvpAMvw2iwtaNGTXvhTpVEa4UN6-qTJYk-LipDs50THFHZzCDddSyPWOaNlLG-KBu_hw6zHCAQnACrO0_ADaGm-FUy9oxfzex4myr7vl47IR092G3CSe-mwomPNKeh9zRw_dXwm2IyCc5gosfy_BF1xC-w=B0BA04D0";
 	String credentials = "drawat@deloitte.com" + ":" + AuthToken;
     String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
 	public JIRAIntegration() {
