@@ -101,11 +101,11 @@ public class TestLoginPage extends TestUtil{
 		  System.out.println("Order Sucessfully placed:   " + ordDetailsPage.orderID);
 		//  xlsObj.writeCellData(2, 5, ordDetailsPage.orderID);
 		  testEvidence.addTestStepDescriptionAndStatus("Step9:- Order Successfully placed:   " + ordDetailsPage.orderID, "Test Step: Passed");
-		  testEvidence.saveTestEvidence("DOT-11212_CC_OrderCreation_TestResults  "+ ordDetailsPage.orderID );
+		  testEvidence.saveTestEvidence("DOT-13139_CC_OrderCreation_TestResults "+ ordDetailsPage.orderID );
 		  JIRAIntegration jira = new JIRAIntegration();
 		  jira.addJIRAComments("DOT-13139", "Test Case:- Passed (Attachment: " + ordDetailsPage.orderID+ ".docx)");
 		 // jira.updateJIRAStatus("DOT-13139", "31");
-		  jira.uploadAttachmentToJIRA("DOT-13139", "DOT-11212_CC_OrderCreation_TestResults  "+ ordDetailsPage.orderID +".docx");
+		  jira.uploadAttachmentToJIRA("DOT-13139", "DOT-13139_CC_OrderCreation_TestResults "+ ordDetailsPage.orderID +".docx");
 		  jira.updateJIRAStatus("DOT-13139", "31");
 		  Assert.assertEquals(true, true);
 	    
