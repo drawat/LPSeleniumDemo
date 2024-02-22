@@ -44,6 +44,12 @@ public class MAOOrderDetailPage extends WebPage{
 	@FindBy(xpath="//button[@data-component-id='UseThisBtn']")
 	public WebElement useThisBtn;
 	
+	@FindBy(xpath="//customer-save-success-dialog[@class='ng-star-inserted']")
+	public WebElement ConfirmCustInfoDailog;
+	
+	@FindBy(xpath="//button[@data-component-id='DoneBtn']")
+	public WebElement doneCustInfoBtn;
+	
 	public void clickUseThisBtn() {
 		useThisBtn.click();
 	}
@@ -74,8 +80,18 @@ public class MAOOrderDetailPage extends WebPage{
 		implicitWait(implicitWaitTime);
 		return updateCustomerDetailsDailog.isDisplayed();
 	}
+	
 	public void clickSaveCustomerDetailsBtn() {
 		saveCustomerDetailsBtn.click();
+		implicitWait(implicitWaitTime);
+	}
+	public boolean isConfirmCustInfoDailogDisplayed() {
+		implicitWait(implicitWaitTime);
+		return ConfirmCustInfoDailog.isDisplayed();
+	}
+	
+	public void clickDoneCustInformBtn() {
+		doneCustInfoBtn.click();
 		implicitWait(implicitWaitTime);
 	}
 }

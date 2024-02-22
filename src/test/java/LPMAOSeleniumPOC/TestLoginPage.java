@@ -98,6 +98,10 @@ public class TestLoginPage extends TestUtil{
 		  if (ordDetailsPage.isupdateCustomerDetailsDailogDisplayed()){
 			  ordDetailsPage.clickSaveCustomerDetailsBtn();
 		  }
+		  
+		  if (ordDetailsPage.isConfirmCustInfoDailogDisplayed()){
+			  ordDetailsPage.clickDoneCustInformBtn();
+		  }
 		  System.out.println("Order Sucessfully placed:   " + ordDetailsPage.orderID);
 		//  xlsObj.writeCellData(2, 5, ordDetailsPage.orderID);
 		  testEvidence.addTestStepDescriptionAndStatus("Step9:- Order Successfully placed:   " + ordDetailsPage.orderID, "Test Step: Passed");
