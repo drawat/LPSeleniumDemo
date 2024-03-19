@@ -164,7 +164,6 @@ public class XstoreLogin extends WebPage{
 	public void associateSignOn(String empId,String pwd) {
 		 try {
 				Thread.sleep(4000);
-				amtDueBtn.click();
 				implicitWait(2);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

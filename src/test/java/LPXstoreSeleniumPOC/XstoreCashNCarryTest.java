@@ -15,6 +15,7 @@ public class XstoreCashNCarryTest extends TestUtil{
 	
 	@Test
 	  public void testXstoreCashNCarryOrder() {
+		
 		TestEvidence testEvidence;
 		String evdFileName;
 		LocalDateTime timestamp = LocalDateTime.now();
@@ -24,6 +25,7 @@ public class XstoreCashNCarryTest extends TestUtil{
 		testEvidence = new TestEvidence(xlogin.getDriver());
 		JIRAIntegration jira = new JIRAIntegration();
 		testEvidence.createTestEvidenceAndAddTitle("DOT-13741: CashNCarry Order Creation Test Results");
+		
 		try {
 			xlogin.openURL();
 			xlogin.xstoreLaunchNlogin("lpoe1269-001.lillypulitzer.biz", "269", "38", "9001", "Lilly1234!");
@@ -60,6 +62,7 @@ public class XstoreCashNCarryTest extends TestUtil{
 			Assert.assertEquals(true, true);
 		}
 		catch (Exception e) {
+			System.out.println(e.toString());
 			testEvidence.addTestStepDescriptionAndStatus("Step Error:- Error Occured", "Test Step: Failed");
 			testEvidence.captureScreenshotAndAttach("ErrorSnapshot");
 			evdFileName ="DOT-13741_CNC_OrderCreation_TestResults Failed" + formattedTimestamp;
