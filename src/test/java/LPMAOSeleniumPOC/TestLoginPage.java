@@ -28,6 +28,8 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.apache.commons.io.FileUtils;
 
@@ -46,11 +48,18 @@ public class TestLoginPage extends TestUtil{
 	  
 	  @Test
 	  public void testHomePageHasAHeader() {
-		  	
-		  
-		  MAOLaunchAndLogin maoLaunchPage = new MAOLaunchAndLogin(getNewDriver("CHROME"));
-		  TestEvidence testEvidence = new TestEvidence(maoLaunchPage.getDriver());
-		  testEvidence.createTestEvidenceAndAddTitle("DOT-11212: Call Center Order Creation Test Results");
+		  TestEvidence testEvidence;
+			String evdFileName;
+			LocalDateTime timestamp = LocalDateTime.now();
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+			String formattedTimestamp = timestamp.format(formatter);
+			MAOLaunchAndLogin maoLaunchPage = new MAOLaunchAndLogin(getNewDriver("CHROME"));
+			JIRAIntegration jira = new JIRAIntegration();
+			 testEvidence = new TestEvidence(maoLaunchPage.getDriver());
+			  testEvidence.createTestEvidenceAndAddTitle("DOT-13139: Call Center Order Creation Test Results");
+		  try {
+		
+		 
 		  maoLaunchPage.openURL();
 		  MAOHomeLandingPage homePage = maoLaunchPage.Login("VPTAdminUser", "Password123!");
 		  testEvidence.addTestStepDescriptionAndStatus("Step1:- Login into MAO", "Test Step: Passed");
@@ -106,12 +115,26 @@ public class TestLoginPage extends TestUtil{
 		//  xlsObj.writeCellData(2, 5, ordDetailsPage.orderID);
 		  testEvidence.addTestStepDescriptionAndStatus("Step9:- Order Successfully placed:   " + ordDetailsPage.orderID, "Test Step: Passed");
 		  testEvidence.saveTestEvidence("DOT-13139_CC_OrderCreation_TestResults "+ ordDetailsPage.orderID );
-		  JIRAIntegration jira = new JIRAIntegration();
+		  
 		  jira.addJIRAComments("DOT-13139", "Test Case:- Passed (Attachment: " + ordDetailsPage.orderID+ ".docx)");
 		 // jira.updateJIRAStatus("DOT-13139", "31");
 		  jira.uploadAttachmentToJIRA("DOT-13139", "DOT-13139_CC_OrderCreation_TestResults "+ ordDetailsPage.orderID +".docx");
 		  jira.updateJIRAStatus("DOT-13139", "31");
 		  Assert.assertEquals(true, true);
+		  
+	  }
+		catch (Exception e) {
+			System.out.println(e.toString());
+			testEvidence.addTestStepDescriptionAndStatus("Step Error:- Delayed response or Error Occured", "Test Step: Failed");
+			testEvidence.captureScreenshotAndAttach("ErrorSnapshot");
+			evdFileName ="DOT-13139_CC_OrderCreation_TestResults Failed" + formattedTimestamp;
+			testEvidence.saveTestEvidence(evdFileName);
+			jira.addJIRAComments("DOT-13139", "Test Case:- Failed, please refer (Attachment: " + evdFileName + ".docx) for more details");
+			jira.uploadAttachmentToJIRA("DOT-13139", evdFileName +".docx");
+			jira.updateJIRAStatus("DOT-13139", "61");
+			Assert.assertEquals(true, false);
+		}
+
 	    
 	}
 	  @AfterTest

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 80.143 s <<< FAILURE! - in TestSuite
-testXstoreCashNCarryOrder(LPXstoreSeleniumPOC.XstoreCashNCarryTest)  Time elapsed: 79.027 s  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 83.768 s <<< FAILURE! - in TestSuite
+testXstoreCashNCarryOrder(LPXstoreSeleniumPOC.XstoreCashNCarryTest)  Time elapsed: 82.853 s  <<< FAILURE!
 java.lang.AssertionError: expected [false] but found [true]
 	at LPXstoreSeleniumPOC.XstoreCashNCarryTest.testXstoreCashNCarryOrder(XstoreCashNCarryTest.java:73)
 

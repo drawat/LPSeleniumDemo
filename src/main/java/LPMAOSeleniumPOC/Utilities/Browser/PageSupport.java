@@ -171,7 +171,7 @@ protected void switchToMainTab() {
 
 		    //thread to sleep for the specified number of milliseconds
 			try {
-				TimeUnit.SECONDS.sleep(maxTimeSeconds);
+				Thread.sleep(maxTimeSeconds * 1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
