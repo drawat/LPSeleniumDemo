@@ -38,7 +38,9 @@ public class XstoreCashNCarryTest extends TestUtil{
 			xlogin.searchNSelectCustomer("fin1test@yopmail.com");
 			testEvidence.addTestStepDescriptionAndStatus("Step3:- Search and Select Customer", "Test Step: Passed");
 			testEvidence.captureScreenshotAndAttach("SearchNSelectCustomer");
-			xlogin.searchSKU("889069941642");
+			xlogin.searchSKU("889069973551");
+			xlogin.searchSKU("889069781323");
+			xlogin.searchSKU("889069932084");
 			testEvidence.addTestStepDescriptionAndStatus("Step4:- Search SKU", "Test Step: Passed");
 			testEvidence.captureScreenshotAndAttach("SearchSKU");
 			xlogin.clickAmountDue();

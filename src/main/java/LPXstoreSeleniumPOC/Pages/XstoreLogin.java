@@ -163,7 +163,7 @@ public class XstoreLogin extends WebPage{
 	
 	public void associateSignOn(String empId,String pwd) {
 		 try {
-				Thread.sleep(4000);
+				Thread.sleep(2000);
 				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -174,7 +174,7 @@ public class XstoreLogin extends WebPage{
 		implicitWait(2);
 		associatePWDTextBox.sendKeys(pwd);
 		associateSignOnOKbtn.click();
-		implicitWait(4);
+		implicitWait(2);
 	}
 	
 	public void startSale() {
@@ -187,13 +187,13 @@ public class XstoreLogin extends WebPage{
 		nextBtn.click();
 		implicitWait(4);
 		custList.click();
+		 implicitWait(2);
 		 try {
 				Thread.sleep(12000);
-				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} // 
+			} //
 			/*
 			 * if (loyaltyNotNowBtn.isDisplayed()) {
 			 * 
