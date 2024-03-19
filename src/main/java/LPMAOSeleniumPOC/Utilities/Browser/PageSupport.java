@@ -166,11 +166,16 @@ protected void switchToMainTab() {
 	
 	protected void implicitWait(int maxTimeSeconds){
 		//try {
-		driver.manage().timeouts().implicitlyWait(maxTimeSeconds, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(maxTimeSeconds, TimeUnit.SECONDS);
 	//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(maxTimeSeconds));
 
 		    //thread to sleep for the specified number of milliseconds
-			//TimeUnit.SECONDS.sleep(maxTimeSeconds);
+			try {
+				TimeUnit.SECONDS.sleep(maxTimeSeconds);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		/*} catch ( java.lang.InterruptedException ie) {
 		    System.out.println(ie);
 		}*/

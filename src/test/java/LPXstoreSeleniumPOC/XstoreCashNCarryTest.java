@@ -35,10 +35,10 @@ public class XstoreCashNCarryTest extends TestUtil{
 			xlogin.startSale();
 			testEvidence.addTestStepDescriptionAndStatus("Step2:- Start Sales", "Test Step: Passed");
 			testEvidence.captureScreenshotAndAttach("StartSales");
-			xlogin.searchNSelectCustomer("pvasanthi@deloitte.com");
+			xlogin.searchNSelectCustomer("fin1test@yopmail.com");
 			testEvidence.addTestStepDescriptionAndStatus("Step3:- Search and Select Customer", "Test Step: Passed");
 			testEvidence.captureScreenshotAndAttach("SearchNSelectCustomer");
-			xlogin.searchSKU("889069997014");
+			xlogin.searchSKU("889069941642");
 			testEvidence.addTestStepDescriptionAndStatus("Step4:- Search SKU", "Test Step: Passed");
 			testEvidence.captureScreenshotAndAttach("SearchSKU");
 			xlogin.clickAmountDue();
@@ -63,11 +63,11 @@ public class XstoreCashNCarryTest extends TestUtil{
 		}
 		catch (Exception e) {
 			System.out.println(e.toString());
-			testEvidence.addTestStepDescriptionAndStatus("Step Error:- Error Occured", "Test Step: Failed");
+			testEvidence.addTestStepDescriptionAndStatus("Step Error:- Delayed response or Error Occured", "Test Step: Failed");
 			testEvidence.captureScreenshotAndAttach("ErrorSnapshot");
 			evdFileName ="DOT-13741_CNC_OrderCreation_TestResults Failed" + formattedTimestamp;
 			testEvidence.saveTestEvidence(evdFileName);
-			jira.addJIRAComments("DOT-13741", "Test Case:- Failed (Attachment: " + evdFileName + ".docx)");
+			jira.addJIRAComments("DOT-13741", "Test Case:- Failed, please refer (Attachment: " + evdFileName + ".docx) for more details");
 			jira.uploadAttachmentToJIRA("DOT-13741", evdFileName +".docx");
 			jira.updateJIRAStatus("DOT-13741", "61");
 			Assert.assertEquals(true, false);

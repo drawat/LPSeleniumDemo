@@ -130,33 +130,33 @@ public class XstoreLogin extends WebPage{
 	
 	public void xstoreLaunchNlogin(String hostname, String store, String register, String empID, String pwd) {
 		LicAgreeBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		changeServerBtn.click();
-		implicitWait(4);
+		implicitWait(1);
 		advancedBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		hostNameTextBox.sendKeys(hostname);
 		testConnectionBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		sucessTestConnectionOKBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		saveBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		backBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		locationDetailsBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		storeTextBox.sendKeys(store);
 		registerTextBox.sendKeys(register);
 		saveBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		saveBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		allowDeviceAccessBtn.click();
-		implicitWait(2);
+		implicitWait(1);
 		empIDTextBox.sendKeys(empID);
 		pwdTextBox.sendKeys(pwd);
-		implicitWait(2);
+		implicitWait(1);
 		okBtn.click();		
 		implicitWait(8);
 	}
@@ -164,7 +164,7 @@ public class XstoreLogin extends WebPage{
 	public void associateSignOn(String empId,String pwd) {
 		 try {
 				Thread.sleep(4000);
-				implicitWait(2);
+				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -187,9 +187,20 @@ public class XstoreLogin extends WebPage{
 		nextBtn.click();
 		implicitWait(4);
 		custList.click();
-		implicitWait(12);
-		loyaltyNotNowBtn.click();
-		implicitWait(6);
+		 try {
+				Thread.sleep(12000);
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} // 
+			/*
+			 * if (loyaltyNotNowBtn.isDisplayed()) {
+			 * 
+			 * loyaltyNotNowBtn.click(); implicitWait(6);
+			 * 
+			 * }
+			 */
 	}
 	
 	public void searchSKU(String skuID) {
