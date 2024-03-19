@@ -3,8 +3,9 @@
 <suite name="Tests" verbose="5">
   <test name="Test1">
     <classes>
-      <class name="LPMAOSeleniumPOC.TestLoginPage"/>
-      <!--class name="LPMAOSeleniumPOC.JIRAIntegrationTest"/-->
+      <!-- class name="LPMAOSeleniumPOC.TestLoginPage"/-->
+      <!-- class name="LPMAOSeleniumPOC.JIRAIntegrationTest"/-->
+      <class name="LPXstoreSeleniumPOC.XstoreCashNCarryTest"/>
     </classes>
   </test>  
 </suite>

@@ -3,15 +3,13 @@
 <suite name="Failed suite [Tests]" guice-stage="DEVELOPMENT" verbose="0">
   <test thread-count="5" name="Test1(failed)" verbose="0">
     <classes>
-      <class name="LPMAOSeleniumPOC.TestLoginPage">
+      <class name="LPXstoreSeleniumPOC.XstoreCashNCarryTest">
         <methods>
-          <include name="closeExcel"/>
-          <include name="testHomePageHasAHeader"/>
-          <include name="openTestDataFile"/>
+          <include name="testXstoreCashNCarryOrder"/>
           <include name="setupChrome"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- LPMAOSeleniumPOC.TestLoginPage -->
+      </class> <!-- LPXstoreSeleniumPOC.XstoreCashNCarryTest -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Tests] -->

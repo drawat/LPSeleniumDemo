@@ -165,12 +165,15 @@ protected void switchToMainTab() {
 	
 	
 	protected void implicitWait(int maxTimeSeconds){
-		try {
+		//try {
+		driver.manage().timeouts().implicitlyWait(maxTimeSeconds, TimeUnit.SECONDS);
+	//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(maxTimeSeconds));
+
 		    //thread to sleep for the specified number of milliseconds
-			TimeUnit.SECONDS.sleep(maxTimeSeconds);
-		} catch ( java.lang.InterruptedException ie) {
+			//TimeUnit.SECONDS.sleep(maxTimeSeconds);
+		/*} catch ( java.lang.InterruptedException ie) {
 		    System.out.println(ie);
-		}
+		}*/
 	}
     public void waitForAjaxInactivity() {
 
